@@ -2,9 +2,11 @@ FROM ubuntu:16.04
 
 MAINTAINER Reuven Gonzales <reuven@virtru.com>
 
+LABEL packsible.provides="base"
+
 RUN apt-get update && \
     apt-get -y upgrade && \
-    apt-get install -y python-dev python-pip libffi-dev libssl-dev apt-transport-https && \
+    apt-get install -y git-core python-dev python-pip libffi-dev libssl-dev apt-transport-https && \
     pip install -U pip && \
     pip install ansible && \
     mkdir -p ~/.ssh && \
